@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://unpkg.com/sanitize.css');
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+
+}
+#app {
+  padding-top:33px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.container {
+  padding-left:  1rem;
+  padding-right:  1rem;
+}
+.d-none {
+    display: none !important;
+}
+.header {
+  display: flex;
+}
+.header__buttons {
+  margin-left: auto;
+  display: flex;
+  grid-gap: 10px;
+}
+.header__title {
+  margin: 0;
+}
+.btn {
+  border: 1px solid #D3D8DF;
+  display: inline-flex;
+  height: 30px;
+  align-items: center;
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+}
+.btn_circle {
+  width: 30px;
+  justify-content: center;
+  border-radius: 50%;
+}
+.btn_pills {
+  border-radius: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.btn__text {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.search-control-group {
+   position: relative;
+   max-width: 564px;
+}
+.search-block {
+  margin-bottom: 18px;
+}
+.search-control {
+  border: 0;
+  border-bottom: 1px solid #BFC9E0;
+  padding: 12px 26px;
+  transition: border-bottom-color 200ms ease-in;
+  width: 100%;
+  font-weight: 400;
+}
+.search-control:focus {
+  outline: none;
+  border-color: #0066ff;
+}
+.search-control::placeholder {
+  color: #8E9CBB;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0;
+  top:50%;
+  transform: translateY(-50%);
+}
+.search-control-clear {
+  position: absolute;
+  right: 0;
+  top:50%;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+  z-index: -1;
+}
+.search-control-clear_show {
+  opacity: 1;
+  z-index: 2;
+}
+
+.search-not-found {
+    color: #8E9CBB;
+}
+
+.doc-list__category_hiiden {
+  display: none;
+}
+.doc-list__subcategory_hiiden {
+  display: none;
+}
+.category-list-item,
+.subcategory-list-item {
+  height: 48px;
+  border: 1px solid #DFE4EF;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  grid-gap: 16px;
+  box-sizing: border-box;
+}
+.btn-collapsed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #D3D8DF;
+  border-radius: 50%;
+  background-color: transparent;
+
+}
+.btn-collapsed > svg {
+  transition: transform ease-in 300ms;
+  transform-origin: center;
+}
+.category-list-item-wrapper .subcategory-list {
+  transition: height 0.3s ease;
+  overflow: hidden;
+  transform: scaleY(1);
+}
+.category-list-item_hide-items .subcategory-list {
+  transform: scaleY(0);
+  transition: height 1.3s ease;
+}
+.doc-list-box__item_collapsed .btn-collapsed > svg {
+  transform: rotate(180deg);
+}
+.doc-list-item_category .category-list-item__title {
+    font-weight: 500;
+}
+
+.doc-list-box .doc-list-box__item {
+
+    position: relative;
+
+}
+
+.doc-list-item {
+  height: 35px;
+  border: 1px solid #DFE4EF;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  grid-gap: 16px;
+  box-sizing: border-box;
+    margin-bottom: -1px;
+
+    z-index: 10;
+}
+.subcategory-list {
+    margin-left: 16px;
+    position: relative;
+    overflow: hidden;
+    /*max-height: 400px;*/
+    transition: max-height linear 300ms;
+}
+
+.doc-list-box {
+
+}
+.doc-list-item_category {
+  height: 48px;
+}
+.doc-list-item__title {
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.doc-list-item_category .doc-list-item__title {
+  font-size: 15px;
+  font-weight: 500;
+}
+.doc-list-item__dots {
+  display: flex;
+  align-items: center;
+  grid-gap: 6px;
+}
+.doc-list-item__dot {
+  --app-doc-list-item__dot-bg: #fff;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--app-doc-list-item__dot-bg);
+}
+.doc-list-item__description {
+  color: #8E9CBB;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 108%;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+.doc-list-item__btn-group {
+  display: flex;
+  margin-left: auto;
+  grid-gap: 12px;
+}
+.doc-list-item__btn {
+  border: none;
+  background-color: transparent;
+}
+.highlight {
+  border-bottom: 4px solid #0066ff;
+}
+.doc-list-item__tags {
+  display: flex;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  grid-gap: 15px;
+  color: #8E9CBB;
+}
+.doc-list-item__tag_danger {
+  color: #FF238D;
+}
